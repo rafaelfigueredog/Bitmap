@@ -4,8 +4,8 @@
   
   Here, I developed:
   
-    1. **A Bitmap** with a basic interface for tests; 
+   1. **A Bitmap** with a basic interface for tests; 
     
-   <img src="https://github.com/rafaelfigueredog/EmbeddedSystems/blob/master/bitmap/bitmap.png?raw=true" width="100"/> 
+   <img src="https://github.com/rafaelfigueredog/EmbeddedSystems/blob/master/bitmap/bitmap.png?raw=true" width="300"/> 
     
     
