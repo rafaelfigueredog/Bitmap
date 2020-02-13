@@ -16,6 +16,7 @@ void begin() {
         printf("3. unset\n"); 
         printf("4. get\n"); 
         printf("5. size\n");
+        printf("6. init/reset\n"); 
         printf("0. exit\n\n"); 
 
         printf("Type: "); 
@@ -43,6 +44,9 @@ void begin() {
             break;
         case 5:
             printf("Size: %hhd\n", size(&bm));   
+            break;
+        case 6:
+            init_bitmapset(&bm);    
             break;
         case 0:
             printf("exiting...\n\n"); 

@@ -20,8 +20,7 @@ void set(bitmapset *bm, uint8_t v) {
 
 uint8_t get(bitmapset *bm, uint8_t v ) { 
 	if (v >= 0 && v <= 31) {
-		uint32_t m = (1 << (31-v));  
-		return (bm->map & m) != 0;
+		return (bm->map & (1 << (31-v))) != 0;
 	}
 	return -1;
 }
