@@ -1,4 +1,4 @@
-# Embedded Systems 
+# Bitmap 
 
   This is a repository of Embedded Systems course at University;
   
