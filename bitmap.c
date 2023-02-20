@@ -48,7 +48,7 @@ void unsetValue(BitmapSet *bitmapSet, uint8_t bitIndex) {
   bitmapSet->size--;
 }
 
-void printBinaryValue(const BitmapSet *bitmapSet) {
+void printBitMap(const BitmapSet *bitmapSet) {
   uint32_t bitIndex = MAX_BIT_INDEX;
   printf("\n");
   while (bitIndex != UINT32_MAX) {

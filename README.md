@@ -45,10 +45,10 @@ unsetValue(&bitmapSet, 1);
 ~~~
 
 
-- Use `printBinaryValue()` to print the binary value of the bitmap.
+- Use `printBitMap()` to print the binary value of the bitmap.
 
 ~~~C
-printBinaryValue(&bitmapSet);
+printBitMap(&bitmapSet);
 ~~~
 
 
@@ -78,7 +78,7 @@ int main() {
   printf("Number of set bits: %u\n", getSize(&bitmapSet));
 
   printf("Binary value: ");
-  printBinaryValue(&bitmapSet);
+  printBitMap(&bitmapSet);
 
   return 0;
 }

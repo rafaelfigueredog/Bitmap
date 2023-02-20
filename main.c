@@ -12,7 +12,7 @@ int main() {
     setValue(&myBitmap, 31);
 
     // Print binary representation
-    printBinaryValue(&myBitmap);
+    printBitMap(&myBitmap);
 
     // Check if a value is set
     printf("Value at index 3 is set: %d\n", getValue(&myBitmap, 3));
@@ -25,7 +25,7 @@ int main() {
     unsetValue(&myBitmap, 5);
 
     // Print binary representation again
-    printBinaryValue(&myBitmap);
+    printBitMap(&myBitmap);
 
     // Get updated size of the bitmap
     printf("Size of the bitmap: %d\n", getSize(&myBitmap));

@@ -16,6 +16,6 @@ void setValue(BitmapSet *bitmapSet, uint8_t bitIndex);
 uint8_t getValue(const BitmapSet *bitmapSet, uint8_t bitIndex);
 uint8_t getSize(const BitmapSet *bitmapSet);
 void unsetValue(BitmapSet *bitmapSet, uint8_t bitIndex);
-void printBinaryValue(const BitmapSet *bitmapSet);
+void printBitMap(const BitmapSet *bitmapSet);
 
 #endif /* BITMAPSET_H */
