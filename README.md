@@ -1,60 +1,17 @@
-# Bitmap Implementation
-This is a simple implementation of a bitmap using C language. Bitmap is a data structure that is used to represent a set of integers as bits. This implementation includes four basic operations: set(), get(), unset(), and size().
+# Bitmap Set
+This is a C code that implements a simple bitmap set. A bitmap set is an array of bits, where each bit can be either 0 or 1. This bitmap set can be used to store a set of integers in a compact way.
 
-## Getting Started
-To get started, you need to include the bitmap.h header file in your C program.
+The code contains the following functions:
 
-~~~C
-#include "bitmap.h"
-~~~~
+`initializeBitmapSet`: Initializes the bitmap set to an empty set.
+`setValue`: Sets the bit at the given index to 1.
+`getValue`: Gets the value of the bit at the given index.
+`getSize`: Returns the number of bits that are set to 1 in the bitmap set.
+`unsetValue`: Sets the bit at the given index to 0.
+`printBinaryValue`: Prints the binary representation of the bitmap set to the console.
 
-## Initialization
-Before using the bitmap, you need to initialize it by calling init_bitmapset() function.
+The size of the bitmap set is defined by the constant BITMAP_SIZE, which is set to 32 by default. This means that the bitmap set can store up to 32 integers.
 
-~~~C
-bitmapset my_bitmap;
-init_bitmapset(&my_bitmap);
-~~~~
+The maximum bit index is defined by the constant MAX_BIT_INDEX, which is defined as BITMAP_SIZE - 1. This means that the valid bit indices are in the range 0 to 31.
 
-## Basic Operations
-
-`set()`
-This function sets a bit at the specified position to 1.
-
-~~~C
-set(&my_bitmap, 2);
-~~~~
-
-`get()`
-This function returns the value of a bit at the specified position.
-
-~~~~C
-uint8_t val = get(&my_bitmap, 2);
-~~~~
-
-`unset()`
-This function sets a bit at the specified position to 0.
-
-~~~C
-unset(&my_bitmap, 2);
-~~~
-
-`size()`
-This function returns the number of bits set to 1 in the bitmap.
-
-~~~C
-uint8_t bitmap_size = size(&my_bitmap);
-~~~~
-
-`binprintf()`
-This function prints the binary representation of the bitmap.
-
-~~~C
-binprintf(&my_bitmap);
-~~~~
-
-## Authors
-[Rafael Guimarães](https://github.com/rafaelfigueredog)
-
-## License
-This project is licensed under the [MIT License](https://opensource.org/license/mit/)
+To use the bitmap set, include the "bitmap.h" header file in your C code.

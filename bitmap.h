@@ -1,19 +1,21 @@
+#ifndef BITMAPSET_H
+#define BITMAPSET_H
+
 #include <stdint.h>
 
-typedef struct bitmapset { 
-    uint32_t map; 
-    uint8_t size;  
-} bitmapset;    
+#define BITMAP_SIZE 32
+#define MAX_BIT_INDEX (BITMAP_SIZE - 1)
 
+typedef struct {
+  uint32_t map;
+  uint8_t size;
+} BitmapSet;
 
-void init_bitmapset(bitmapset *bm); 
+void initializeBitmapSet(BitmapSet *bitmapSet);
+void setValue(BitmapSet *bitmapSet, uint8_t bitIndex);
+uint8_t getValue(const BitmapSet *bitmapSet, uint8_t bitIndex);
+uint8_t getSize(const BitmapSet *bitmapSet);
+void unsetValue(BitmapSet *bitmapSet, uint8_t bitIndex);
+void printBinaryValue(const BitmapSet *bitmapSet);
 
-void set(bitmapset *bm, uint8_t v); 
-
-uint8_t get(bitmapset *bm, uint8_t v); 
-
-uint8_t size(bitmapset *bm);
-
-void unset(bitmapset *bm, uint8_t v); 
-
-void binprintf(bitmapset *bm);
+#endif /* BITMAPSET_H */
