@@ -1,17 +1,46 @@
-# Bitmap Set
-This is a C code that implements a simple bitmap set. A bitmap set is an array of bits, where each bit can be either 0 or 1. This bitmap set can be used to store a set of integers in a compact way.
+# Bitmap Library
+This is a C library for handling bitmaps. It includes functions for initializing a BitmapSet, setting and unsetting bits, retrieving the value of a bit, and printing the binary value of a BitmapSet.
 
-The code contains the following functions:
+## Get Started
+1. Include the bitmap.h header file in your project.
+2. Create a BitmapSet struct instance.
 
-`initializeBitmapSet`: Initializes the bitmap set to an empty set.
-`setValue`: Sets the bit at the given index to 1.
-`getValue`: Gets the value of the bit at the given index.
-`getSize`: Returns the number of bits that are set to 1 in the bitmap set.
-`unsetValue`: Sets the bit at the given index to 0.
-`printBinaryValue`: Prints the binary representation of the bitmap set to the console.
+## Usage
+1. Use `initializeBitmapSet()` to initialize the struct.
+2. Use `setValue()` to set a bit in the bitmap.
+3. Use `getValue()` to retrieve the value of a bit in the bitmap.
+4. Use `getSize()` to retrieve the number of set bits in the bitmap.
+5. Use `unsetValue()` to unset a bit in the bitmap.
+6. Use `printBinaryValue()` to print the binary value of the bitmap.
 
-The size of the bitmap set is defined by the constant BITMAP_SIZE, which is set to 32 by default. This means that the bitmap set can store up to 32 integers.
 
-The maximum bit index is defined by the constant MAX_BIT_INDEX, which is defined as BITMAP_SIZE - 1. This means that the valid bit indices are in the range 0 to 31.
+## Example
+Here is an example of how to use the Bitmap Library:
 
-To use the bitmap set, include the "bitmap.h" header file in your C code.
+~~~c
+#include "bitmap.h"
+#include <stdio.h>
+
+int main() {
+  BitmapSet bitmapSet;
+  initializeBitmapSet(&bitmapSet);
+
+  setValue(&bitmapSet, 1);
+  setValue(&bitmapSet, 3);
+  setValue(&bitmapSet, 5);
+  setValue(&bitmapSet, 7);
+
+  printf("Value at index 5: %u\n", getValue(&bitmapSet, 5));
+  printf("Number of set bits: %u\n", getSize(&bitmapSet));
+
+  unsetValue(&bitmapSet, 3);
+
+  printf("Value at index 3: %u\n", getValue(&bitmapSet, 3));
+  printf("Number of set bits: %u\n", getSize(&bitmapSet));
+
+  printf("Binary value: ");
+  printBinaryValue(&bitmapSet);
+
+  return 0;
+}
+~~~
