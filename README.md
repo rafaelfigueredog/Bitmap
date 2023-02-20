@@ -19,41 +19,13 @@ initializeBitmapSet(&bitmapSet);
 ## Basic Operations
 
 - Use `setValue()` to set a bit in the bitmap.
-
-~~~C
-setValue(&bitmapSet, 1);
-~~~
-
 - Use `getValue()` to retrieve the value of a bit in the bitmap.
-
-~~~C
-getValue(&bitmapSet, 1);
-~~~
-
-
 - Use `getSize()` to retrieve the number of set bits in the bitmap.
-
-~~~C
-getSize(&bitmapSet);
-~~~
-
-
 - Use `unsetValue()` to unset a bit in the bitmap.
-
-~~~C
-unsetValue(&bitmapSet, 1);
-~~~
-
-
 - Use `printBitMap()` to print the binary value of the bitmap.
 
-~~~C
-printBitMap(&bitmapSet);
-~~~
-
-
-
 ## Example
+
 Here is an example of how to use the Bitmap Library:
 
 ~~~c
@@ -82,15 +54,4 @@ int main() {
 
   return 0;
 }
-~~~
-
-## Output
-
-~~~shell
-Value at index 5: 1
-Number of set bits: 4
-Value at index 3: 0
-Number of set bits: 3
-Binary value: 
-0100 0101 0000 0000 0000 0000 0000 0000
 ~~~
