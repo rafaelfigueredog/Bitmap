@@ -83,3 +83,14 @@ int main() {
   return 0;
 }
 ~~~
+
+## Output
+
+~~~shell
+Value at index 5: 1
+Number of set bits: 4
+Value at index 3: 0
+Number of set bits: 3
+Binary value: 
+0100 0101 0000 0000 0000 0000 0000 0000
+~~~
