@@ -1,17 +1,56 @@
 # Bitmap Library
 This is a C library for handling bitmaps. It includes functions for initializing a BitmapSet, setting and unsetting bits, retrieving the value of a bit, and printing the binary value of a BitmapSet.
 
-## Get Started
-1. Include the bitmap.h header file in your project.
-2. Create a BitmapSet struct instance.
+## Getting Started
+Include the bitmap.h header file in your project.
 
-## Usage
-1. Use `initializeBitmapSet()` to initialize the struct.
-2. Use `setValue()` to set a bit in the bitmap.
-3. Use `getValue()` to retrieve the value of a bit in the bitmap.
-4. Use `getSize()` to retrieve the number of set bits in the bitmap.
-5. Use `unsetValue()` to unset a bit in the bitmap.
-6. Use `printBinaryValue()` to print the binary value of the bitmap.
+~~~C
+#include "bitmap.h"
+~~~
+
+## Initialization
+Before using the bitmap, you need to initialize it by calling `initializeBitmapSet()` function.
+
+~~~C
+BitmapSet bitmapSet;
+initializeBitmapSet(&bitmapSet);
+~~~
+
+## Basic Operations
+
+- Use `setValue()` to set a bit in the bitmap.
+
+~~~C
+setValue(&bitmapSet, 1);
+~~~
+
+- Use `getValue()` to retrieve the value of a bit in the bitmap.
+
+~~~C
+getValue(&bitmapSet, 1);
+~~~
+
+
+- Use `getSize()` to retrieve the number of set bits in the bitmap.
+
+~~~C
+getSize(&bitmapSet);
+~~~
+
+
+- Use `unsetValue()` to unset a bit in the bitmap.
+
+~~~C
+unsetValue(&bitmapSet, 1);
+~~~
+
+
+- Use `printBinaryValue()` to print the binary value of the bitmap.
+
+~~~C
+printBinaryValue(&bitmapSet);
+~~~
+
 
 
 ## Example
