@@ -1,57 +1,76 @@
-# Bitmap Library
-This is a C library for handling bitmaps. It includes functions for initializing a BitmapSet, setting and unsetting bits, retrieving the value of a bit, and printing the binary value of a BitmapSet.
+# Bitmask Library
+
+This is a C library for handling bitmasks. It includes functions for initializing a Bitmask, Setting and Unsetting bits and retrieving the value of a bit.
 
 ## Getting Started
-Include the bitmap.h header file in your project.
 
-~~~C
-#include "bitmap.h"
-~~~
+1. Copy Bitmask.h and Bitmask.c in your Project Source
+
+2. Include the Bitmask.h header file in your project.
+
+    ~~~C
+      #include "Bitmask.h"
+    ~~~
 
 ## Initialization
-Before using the bitmap, you need to initialize it by calling `initializeBitmapSet()` function.
+
+Before using the bitmask, you need to initialize it by calling `Bitmask_Init(size_t Size)` function.
 
 ~~~C
-BitmapSet bitmapSet;
-initializeBitmapSet(&bitmapSet);
+size_t Size = 6;
+Bitmask* bitmask;
+bitmask = Bitmask_Init(Size);
 ~~~
 
 ## Basic Operations
 
-- Use `setValue()` to set a bit in the bitmap.
-- Use `getValue()` to retrieve the value of a bit in the bitmap.
-- Use `getSize()` to retrieve the number of set bits in the bitmap.
-- Use `unsetValue()` to unset a bit in the bitmap.
-- Use `printBitMap()` to print the binary value of the bitmap.
+- Use `Bitmask_Init(size_t Size)` to initialize
+ a new `Bitmask*`.
+- Use `Bitmask_Set(Bitmask* bitmap, size_t Index)` to set (or set to 1) a bit in the bitmask.
+- Use `Bitmask_Unset(Bitmask* bitmap, size_t Index)` to unset (or set to 0) a bit in the bitmask.
+- Use `Bitmask_Get(Bitmask* bitmap, size_t Index)` to retrieve the value of a bit in the bitmask. Note: If bitmap is null then it will return -1.
 
 ## Example
 
-Here is an example of how to use the Bitmap Library:
+Here is an example of how to use the Bitmask Library:
 
 ~~~c
-#include "bitmap.h"
+#include "Bitmask.h"
 #include <stdio.h>
 
-int main() {
-  BitmapSet bitmapSet;
-  initializeBitmapSet(&bitmapSet);
+#define Size 10
+Bitmask* mask;
 
-  setValue(&bitmapSet, 1);
-  setValue(&bitmapSet, 3);
-  setValue(&bitmapSet, 5);
-  setValue(&bitmapSet, 7);
+void PrintAll()
+{
+    for (size_t i = 0; i < Size; ++i) 
+        printf("%d", Bitmask_Get(mask, i));
+    printf("\n");
+}
 
-  printf("Value at index 5: %u\n", getValue(&bitmapSet, 5));
-  printf("Number of set bits: %u\n", getSize(&bitmapSet));
+int main() 
+{
+    mask = Bitmask_Init(Size);
 
-  unsetValue(&bitmapSet, 3);
+    Bitmask_Set(mask, 0); 
+    Bitmask_Set(mask, 2); 
+    Bitmask_Set(mask, 5); 
+    Bitmask_Set(mask, 7); 
+    Bitmask_Set(mask, 6); 
 
-  printf("Value at index 3: %u\n", getValue(&bitmapSet, 3));
-  printf("Number of set bits: %u\n", getSize(&bitmapSet));
+    PrintAll();
 
-  printf("Binary value: ");
-  printBitMap(&bitmapSet);
+    printf("Value at Index 2: %d\n", Bitmask_Get(mask, 2));
+    printf("Value at Index 7: %d\n", Bitmask_Get(mask, 7));
 
-  return 0;
+    Bitmask_Unset(mask, 2);
+
+    printf("Value at Index 2: %d\n", Bitmask_Get(mask, 2));
+
+    printf("Size of Bitmask: %d\n", mask->size);
+
+    PrintAll();
+
+    return 0;
 }
 ~~~
